@@ -48,11 +48,9 @@
         <p>Nazywam się Kasia Popławska, jestem studentką pierwszego roku Informatyki na Uniwersytecie gdański. Lubie zwierzęta, moje hobby to rysunek i gry komputerowe.</p>
 
 <p>Oto przykładowy skrypt </p>
-
-<h1>
-<a name="binbash" class="anchor" href="#binbash"><span class="octicon octicon-link"></span></a>!/bin/bash</h1>
-
-<p>echo "Czy liczpa plików wynosi dwa?"
+<pre><code>
+<p>#!/bin/bash
+echo "Czy liczpa plików wynosi dwa?"
  if [ $# -eq 2 ]
  then echo "Tak" 
 if [ -e $1 -a -e $2 ]
@@ -65,6 +63,7 @@ then echo
 else echo "Pliki nie istnieja" 
 fi 
 fi</p>
+</code></pre>
       </section>
 
       <footer>
