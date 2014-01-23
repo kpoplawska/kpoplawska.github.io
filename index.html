@@ -1,88 +1,74 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Katarzyna Popławska : " />
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Katarzyna Popławska by kpoplawska</title>
+    <title>Katarzyna Popławska</title>
   </head>
 
   <body>
-    <a id="forkme_banner" href="https://github.com/kpoplawska">View on GitHub</a>
-    <div class="shell">
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Katarzyna Popławska</h1>
-            <h2></h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kpoplawska">View on GitHub</a>
 
-      <div id="no-downloads">
-        <span class="inner">
-        </span>
-      </div>
+          <h1 id="project_title">Katarzyna Popławska</h1>
+          <h2 id="project_tagline"></h2>
 
+        </header>
+    </div>
 
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <p>Nazywam się Kasia Popławska, jestem studentką pierwszego roku Informatyki na Uniwersytecie Gdańskim. Lubie zwierzęta, moje hobby to rysunek i gry komputerowe.</p>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Nazywam się Kasia Popławska, jestem studentką pierwszego roku Informatyki na Uniwersytecie gdański. Lubie zwierzęta, moje hobby to rysunek i gry komputerowe.</p>
 
 <p>Oto przykładowy skrypt </p>
-<pre><code>
-<p>#!/bin/bash
-echo "Czy liczpa plików wynosi dwa?"
- if [ $# -eq 2 ]
- then echo "Tak" 
-if [ -e $1 -a -e $2 ]
- then echo "Pliki istnieja" 
-x=<code>cat $1 | wc -m</code> y=<code>cat $2 | wc -m</code> if [ $x -gt $y ] 
-then echo
- "Plik $1 posiada wiecej znaków"
- else echo "Plik $2 posiada wiecej znaków"
- fi 
-else echo "Pliki nie istnieja" 
-fi 
-fi</p>
+
+<p>1) Skrypt ten sprawdza czy ilość plików wynosi dwa, po czym jeżeli pliki te istnieją sprawdza który z nich ma zawartą większą ilość znaków.</p>
+
+<pre><code> #!/bin/bash                                             
+        echo "Czy liczpa plików wynosi dwa?"                      
+ if [ $# -eq 2 ]                 
+        then echo "Tak"                      
+        if [ -e $1 -a -e $2 ]                   
+           x=`cat $1 | wc -m`                                
+           y=`cat $2 | wc -m`                        
+               then echo                    
+                    "Plik $1 posiada wiecej znaków"                          
+               else echo "Plik $2 posiada wiecej znaków"
+        fi                       
+        else echo "Pliki nie istnieja"                             
+ fi                                        
 </code></pre>
 
+<p>2) Ten skrypt natomiast dopisuje do wszystkich plików w katalogu sufiks .old, omijając nasz skrypt.</p>
 
-
+<pre><code> #!/bin/bash                                                                                  
+ for nazwa in `ls`                                                    
+        do 
+        if [ $nazwa != `basename $0` ]
+        cp $nazwa $nazwa.old 
+        done
+ exit 0
+</code></pre>
       </section>
+    </div>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>Projects by <a href="https://github.com/kpoplawska">kpoplawska</a> can be found on <a href="https://github.com/kpoplawska">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
-
     </div>
 
     
+
   </body>
 </html>
